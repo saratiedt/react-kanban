@@ -7,7 +7,7 @@ const dataset = {
     },
     columns: {
       "column-1": { id: "column-1", title: "Todo", taskIds: ['task-1']},
-      "column-2": { id: "column-2", title: "In progress", taskIds: ['task-2', 'task-3'] },
+      "column-2": { id: "column-2", title: "In progress", taskIds: ['task-2', 'task-3', 'task-4', 'task-1'] },
       "column-3": { id: "column-3", title: "Review", taskIds: [] },
       "column-4": { id: "column-4", title: "Completed", taskIds: ["task-4"] }
   },
