@@ -6,6 +6,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
   display: flex;
+  justify-content: center;
 `;
 
 const App = () => {
