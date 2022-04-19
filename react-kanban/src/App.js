@@ -14,12 +14,10 @@ const App = () => {
 
   const onDragEnd = (result) => {
     const { destination, source, draggableId, type } = result;
-    //caso não possua destino
     if (!destination) {
       return;
     }
 
-    //se o destino for o mesmo que já estava
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
@@ -27,7 +25,7 @@ const App = () => {
       return;
     }
 
-    //If you're dragging columns
+
     if (type === "column") {
       const newColumnOrder = Array.from(data.columnOrder);
       newColumnOrder.splice(source.index, 1);
@@ -39,16 +37,16 @@ const App = () => {
       setData(newState);
       return;
     }
-    //Anything below this happens if you're dragging tasks
+ 
     const start = data.columns[source.droppableId];
     const finish = data.columns[destination.droppableId];
 
-    //If dropped inside the same column
+  
     if (start === finish) {
       const newTaskIds = Array.from(start.taskIds);
       // remove
       newTaskIds.splice(source.index, 1);
-      // adiciona para o destination
+ 
       newTaskIds.splice(destination.index, 0, draggableId);
       const newColumn = {
         ...start,
@@ -65,7 +63,7 @@ const App = () => {
       return;
     }
 
-    //If dropped in a different column
+  
     const startTaskIds = Array.from(start.taskIds);
     startTaskIds.splice(source.index, 1);
     const newStart = {
